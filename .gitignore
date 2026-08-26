@@ -1,0 +1,7 @@
+*.zwc
+.zcompdump*
+plugins/
+local.zsh
+.DS_Store
+TUTORIAL.md
+starship.toml.bak

@@ -1,0 +1,20 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = "$all"
+
+add_newline = true
+
+# Timeout for Starship to scan files, in milliseconds.
+scan_timeout = 100
+
+[username]
+show_always = true
+disabled = false
+
+[git_status]
+format = "\\[ $all_status$ahead_behind\\] "
+staged = 'A$count '
+modified = 'M$count '
+untracked = '?$count '
+deleted = 'D$count '
+conflicted = 'U$count '
