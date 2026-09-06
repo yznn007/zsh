@@ -1,2 +1,3 @@
-# 当前配置没有自定义 Zsh 按键绑定。
-# 保留此模块，便于以后按作者仓库的结构添加绑定。
+if (( $+functions[_fzf_file_no_hidden] )); then
+    bindkey -M emacs '^F' _fzf_file_no_hidden
+fi

@@ -76,7 +76,3 @@ fpath=(${fpath:#*/zsh-completions})
 
 # zsh-completions must be installed before compinit.
 _zplugin_fpath zsh-users zsh-completions
-
-# Keep syntax highlighting last among the loaded script plugins.
-_zplugin_load zsh-users zsh-autosuggestions
-_zplugin_load zsh-users zsh-syntax-highlighting

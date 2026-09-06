@@ -1,5 +1,6 @@
 *.zwc
 .zcompdump*
+.zsh_history
 plugins/
 local.zsh
 .DS_Store

@@ -7,9 +7,8 @@ export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 
 # ---------- Repository path ----------
-export ZSH_CONFIG_DIR="${ZSH_CONFIG_DIR:-$XDG_CONFIG_HOME/zsh}"
+export ZDOTDIR="${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}"
+export ZSH_CONFIG_DIR="${ZSH_CONFIG_DIR:-$ZDOTDIR}"
 
-# ---------- Cargo ----------
-if [[ -r "$HOME/.cargo/env" ]]; then
-    source "$HOME/.cargo/env"
-fi
+# ---------- Starship ----------
+export STARSHIP_CONFIG="${STARSHIP_CONFIG:-$ZDOTDIR/starship.toml}"

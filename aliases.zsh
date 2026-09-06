@@ -4,6 +4,42 @@ alias sha256='shasum -a 256'
 alias py='python3'
 alias clang++='clang++ -std=c++20'
 
+# ---------- Terminal tools ----------
+if command -v nvim >/dev/null 2>&1; then
+    alias vim='nvim'
+fi
+if command -v eza >/dev/null 2>&1; then
+    alias ls='eza --icons'
+    alias ll='eza -lh --icons --git'
+    alias la='eza -lah --icons --git'
+    alias tree='eza --tree --icons'
+    (( $+functions[compdef] )) && compdef eza=ls
+fi
+if command -v bat >/dev/null 2>&1; then
+    alias cat='bat'
+fi
+if command -v rg >/dev/null 2>&1; then
+    alias grep='rg --color=auto'
+fi
+if command -v yazi >/dev/null 2>&1; then
+    y() {
+        local tmp cwd yazi_result=0
+        tmp=$(command mktemp -t yazi-cwd.XXXXXX) || return 1
+        {
+            command yazi "$@" --cwd-file="$tmp" || yazi_result=$?
+            if (( yazi_result == 0 )); then
+                IFS= read -r -d '' cwd < "$tmp" || true
+                if [[ -n $cwd && $cwd != $PWD && -d $cwd ]]; then
+                    builtin cd -- "$cwd" || yazi_result=$?
+                fi
+            fi
+        } always {
+            command rm -f -- "$tmp"
+        }
+        return $yazi_result
+    }
+fi
+
 # ---------- Colors ----------
 HEI=$'\e[1;30m'
 HONG=$'\e[1;31m'

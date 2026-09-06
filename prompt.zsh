@@ -7,7 +7,7 @@ fi
 starship_use() {
     local name="$1"
     local file="$HOME/.config/starship_${name}.toml"
-    local config="$HOME/.config/starship.toml"
+    local config="${STARSHIP_CONFIG:-$HOME/.config/starship.toml}"
 
     case "$name" in
         default|official)
