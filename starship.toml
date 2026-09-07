@@ -7,6 +7,9 @@ add_newline = true
 # Timeout for Starship to scan files, in milliseconds.
 scan_timeout = 100
 
+# Timeout for commands executed by Starship, in milliseconds.
+command_timeout = 3000
+
 [username]
 show_always = true
 disabled = false
@@ -18,3 +21,9 @@ modified = 'M$count '
 untracked = '?$count '
 deleted = 'D$count '
 conflicted = 'U$count '
+
+[status]
+disabled = false
+
+[package]
+disabled = true
