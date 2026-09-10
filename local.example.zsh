@@ -28,6 +28,8 @@
 # fi
 
 # ---------- Conda ----------
+# Let Starship render the active Conda environment.
+export CONDA_CHANGEPS1=false
 # if [[ -x "$HOME/miniconda3/bin/conda" ]]; then
 #     __conda_setup="$("$HOME/miniconda3/bin/conda" shell.zsh hook 2> /dev/null)"
 #     if [[ $? -eq 0 ]]; then
